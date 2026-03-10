@@ -468,6 +468,31 @@ blockquote::before {
 }
 .stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
 
+.signup-form-wrap { max-width: 520px; margin: 0 auto; }
+
+.gdpr-check {
+  margin-top: 0.8rem;
+  display: flex; align-items: flex-start; gap: 0.6rem;
+}
+.gdpr-check label {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  cursor: pointer;
+}
+.gdpr-check input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0;
+  accent-color: var(--white);
+  width: 15px; height: 15px; cursor: pointer;
+}
+.gdpr-check span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.gdpr-check a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--shadow-grey-1); color: rgba(255,255,255,0.4);
