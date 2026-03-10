@@ -5,508 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CommonGood CRM — Built for Nonprofits, By People Who Care</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --ink: #0f1612;
-    --paper: #f5f0e8;
-    --sage: #4a7c59;
-    --sage-light: #7aab8a;
-    --amber: #d4813a;
-    --cream: #ede8da;
-    --muted: #8a8578;
-    --white: #ffffff;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 2.5rem;
-    background: rgba(245,240,232,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(74,124,89,0.12);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem; font-weight: 900; color: var(--sage);
-    letter-spacing: -0.02em;
-  }
-  .nav-links { display: flex; gap: 2rem; align-items: center; }
-  .nav-links a {
-    text-decoration: none; color: var(--ink); font-size: 0.9rem;
-    font-weight: 500; opacity: 0.7; transition: opacity 0.2s;
-  }
-  .nav-links a:hover { opacity: 1; }
-  .nav-cta {
-    background: var(--sage); color: var(--white) !important;
-    padding: 0.55rem 1.3rem; border-radius: 4px;
-    opacity: 1 !important; font-weight: 500 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--sage-light) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; gap: 4rem;
-    padding: 9rem 5rem 5rem;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -20%; right: -10%;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(74,124,89,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(74,124,89,0.1); border: 1px solid rgba(74,124,89,0.25);
-    color: var(--sage); font-size: 0.78rem; font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 0.4rem 0.9rem; border-radius: 100px; margin-bottom: 1.8rem;
-  }
-  .hero-eyebrow span { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-    font-weight: 900; line-height: 1.08;
-    letter-spacing: -0.03em; margin-bottom: 1.5rem;
-  }
-  .hero-title em {
-    font-style: italic; color: var(--sage);
-  }
-  .hero-sub {
-    font-size: 1.05rem; line-height: 1.75; color: #444;
-    max-width: 500px; margin-bottom: 2.5rem;
-  }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--sage); color: var(--white);
-    padding: 0.85rem 2rem; border-radius: 6px;
-    font-size: 0.95rem; font-weight: 500;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-    letter-spacing: 0.01em;
-  }
-  .btn-primary:hover { background: var(--sage-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(74,124,89,0.3); }
-  .btn-secondary {
-    background: transparent; color: var(--ink);
-    padding: 0.85rem 2rem; border-radius: 6px;
-    font-size: 0.95rem; font-weight: 500;
-    text-decoration: none; border: 1.5px solid rgba(15,22,18,0.2); cursor: pointer;
-    transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-  }
-  .btn-secondary:hover { border-color: var(--sage); color: var(--sage); }
-
-  .hero-trust {
-    margin-top: 2.5rem;
-    display: flex; align-items: center; gap: 1rem;
-    font-size: 0.82rem; color: var(--muted);
-  }
-  .trust-avatars { display: flex; }
-  .trust-avatars span {
-    width: 32px; height: 32px; border-radius: 50%;
-    border: 2px solid var(--paper);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem; font-weight: 700; color: white;
-    margin-left: -8px;
-  }
-  .trust-avatars span:first-child { margin-left: 0; }
-
-  /* ── PROTOTYPE MOCKUP ── */
-  .hero-visual {
-    position: relative;
-    animation: floatUp 0.8s ease-out both;
-  }
-  @keyframes floatUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-
-  .mockup-browser {
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 30px 80px rgba(15,22,18,0.18), 0 8px 30px rgba(15,22,18,0.08);
-    overflow: hidden;
-    border: 1px solid rgba(15,22,18,0.08);
-  }
-  .mockup-bar {
-    background: #f0ebe0; padding: 0.7rem 1rem;
-    display: flex; align-items: center; gap: 0.6rem;
-    border-bottom: 1px solid rgba(15,22,18,0.08);
-  }
-  .dot { width: 11px; height: 11px; border-radius: 50%; }
-  .dot-r { background: #ff6058; } .dot-y { background: #ffbd2e; } .dot-g { background: #28c840; }
-  .url-bar {
-    flex: 1; background: var(--white); border-radius: 4px;
-    padding: 0.3rem 0.8rem; font-size: 0.72rem; color: var(--muted);
-    margin: 0 0.5rem;
-  }
-  .mockup-content { padding: 0; }
-
-  /* Mini app inside mockup */
-  .app-layout { display: grid; grid-template-columns: 180px 1fr; height: 340px; }
-  .app-sidebar {
-    background: var(--ink); padding: 1.2rem 0;
-    display: flex; flex-direction: column;
-  }
-  .sidebar-brand {
-    padding: 0 1rem 1.2rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem; font-weight: 700; color: var(--sage-light);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 0.8rem;
-  }
-  .sidebar-item {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.5rem 1rem; font-size: 0.72rem;
-    color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.15s;
-    border-radius: 0; position: relative;
-  }
-  .sidebar-item.active {
-    color: white; background: rgba(74,124,89,0.2);
-    border-right: 2px solid var(--sage-light);
-  }
-  .sidebar-item:hover:not(.active) { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.04); }
-  .sidebar-icon { font-size: 0.85rem; }
-
-  .app-main { background: #faf9f5; overflow: hidden; }
-  .app-header {
-    padding: 0.9rem 1.2rem; border-bottom: 1px solid #ede8da;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .app-title { font-size: 0.82rem; font-weight: 600; }
-  .app-badge {
-    background: rgba(74,124,89,0.1); color: var(--sage);
-    font-size: 0.65rem; padding: 0.2rem 0.6rem; border-radius: 100px;
-    font-weight: 500;
-  }
-  .app-table { width: 100%; }
-  .table-header {
-    display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr;
-    padding: 0.5rem 1.2rem; background: #f0ebe0;
-    font-size: 0.62rem; font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
-  .table-row {
-    display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr;
-    padding: 0.55rem 1.2rem; border-bottom: 1px solid #ede8da;
-    font-size: 0.68rem; align-items: center;
-    transition: background 0.1s; cursor: pointer;
-  }
-  .table-row:hover { background: rgba(74,124,89,0.04); }
-  .org-name { font-weight: 600; color: var(--ink); }
-  .org-type { color: var(--muted); font-size: 0.62rem; margin-top: 1px; }
-  .status-pill {
-    display: inline-flex; padding: 0.18rem 0.5rem;
-    border-radius: 100px; font-size: 0.6rem; font-weight: 600;
-  }
-  .status-active { background: rgba(74,124,89,0.12); color: var(--sage); }
-  .status-warm { background: rgba(212,129,58,0.12); color: var(--amber); }
-  .status-new { background: rgba(100,100,200,0.1); color: #5050b0; }
-  .donation-amt { font-weight: 600; font-size: 0.68rem; color: var(--ink); }
-
-  /* ── PROBLEM SECTION ── */
-  .section { padding: 6rem 5rem; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--sage); margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
-    margin-bottom: 1.5rem;
-  }
-
-  .problem-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
-    margin-top: 4rem;
-  }
-  .problem-card {
-    background: var(--white);
-    border: 1px solid rgba(15,22,18,0.08);
-    border-radius: 10px; padding: 2rem;
-    position: relative; overflow: hidden;
-  }
-  .problem-card::after {
-    content: attr(data-num);
-    position: absolute; bottom: -0.5rem; right: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem; font-weight: 900; color: rgba(74,124,89,0.06);
-    line-height: 1; pointer-events: none;
-  }
-  .problem-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-  .problem-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
-  .problem-card p { font-size: 0.87rem; line-height: 1.65; color: #555; }
-
-  /* ── SOLUTION ── */
-  .solution-section {
-    background: var(--ink); color: var(--white);
-    padding: 6rem 5rem;
-  }
-  .solution-section .section-label { color: var(--sage-light); }
-  .solution-section .section-title { color: var(--white); }
-  .features-grid {
-    display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; margin-top: 4rem;
-  }
-  .feature-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px; padding: 2rem;
-    transition: all 0.25s;
-  }
-  .feature-card:hover {
-    background: rgba(74,124,89,0.12);
-    border-color: rgba(74,124,89,0.3);
-    transform: translateY(-2px);
-  }
-  .feature-icon { font-size: 1.6rem; margin-bottom: 1rem; }
-  .feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .feature-card p { font-size: 0.86rem; line-height: 1.65; color: rgba(255,255,255,0.55); }
-
-  /* ── PROTOTYPE SECTION ── */
-  .proto-section { padding: 6rem 5rem; background: var(--cream); }
-  .proto-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: center;
-  }
-  .proto-screens {
-    position: relative; height: 400px;
-  }
-  .proto-screen {
-    position: absolute;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(15,22,18,0.12);
-    overflow: hidden;
-    border: 1px solid rgba(15,22,18,0.08);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .proto-screen:hover { transform: scale(1.02); z-index: 10; }
-  .proto-screen-1 { width: 280px; top: 20px; left: 0; z-index: 3; }
-  .proto-screen-2 { width: 260px; top: 80px; left: 160px; z-index: 2; }
-  .proto-screen-3 { width: 200px; top: 160px; left: 300px; z-index: 1; opacity: 0.7; }
-
-  .screen-header {
-    background: var(--sage); padding: 0.6rem 0.8rem;
-    font-size: 0.6rem; font-weight: 600; color: white; letter-spacing: 0.05em;
-  }
-  .screen-body { padding: 0.8rem; }
-  .screen-row {
-    height: 10px; background: #ede8da; border-radius: 3px;
-    margin-bottom: 0.5rem;
-  }
-  .screen-row.short { width: 60%; }
-  .screen-row.medium { width: 80%; }
-  .screen-chart {
-    display: flex; align-items: flex-end; gap: 4px;
-    height: 60px; margin-top: 0.8rem;
-  }
-  .chart-bar {
-    flex: 1; background: var(--sage); border-radius: 2px 2px 0 0; opacity: 0.7;
-    transition: opacity 0.2s;
-  }
-  .chart-bar:hover { opacity: 1; }
-
-  .proto-cta-box {
-    background: white; border-radius: 10px; padding: 2rem;
-    border: 1px solid rgba(15,22,18,0.08);
-    box-shadow: 0 4px 20px rgba(15,22,18,0.06);
-  }
-  .proto-cta-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem;
-  }
-  .proto-cta-box p { font-size: 0.9rem; color: #555; line-height: 1.65; margin-bottom: 1.5rem; }
-  .proto-steps { list-style: none; margin-bottom: 1.8rem; }
-  .proto-steps li {
-    display: flex; gap: 0.8rem; align-items: flex-start;
-    font-size: 0.86rem; margin-bottom: 0.7rem; color: #444;
-  }
-  .proto-steps li::before {
-    content: '✓'; color: var(--sage); font-weight: 700;
-    flex-shrink: 0; margin-top: 1px;
-  }
-
-  /* ── FUNDING ── */
-  .funding-section { padding: 6rem 5rem; }
-  .funding-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; margin-top: 3rem; }
-  .progress-card {
-    background: var(--white); border-radius: 12px; padding: 2rem;
-    border: 1px solid rgba(15,22,18,0.08);
-    box-shadow: 0 4px 20px rgba(15,22,18,0.06);
-    position: sticky; top: 6rem;
-  }
-  .progress-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; }
-  .progress-amount { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--sage); }
-  .progress-goal { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
-  .progress-bar-wrap { background: #ede8da; border-radius: 100px; height: 8px; margin-bottom: 0.5rem; overflow: hidden; }
-  .progress-bar-fill { height: 100%; background: var(--sage); border-radius: 100px; width: 12%; transition: width 1s ease; }
-  .progress-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); margin-bottom: 2rem; }
-  .tiers { display: flex; flex-direction: column; gap: 0.7rem; }
-  .tier {
-    border: 1.5px solid #ede8da; border-radius: 8px; padding: 1rem 1.2rem;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .tier:hover, .tier.popular { border-color: var(--sage); background: rgba(74,124,89,0.04); }
-  .tier-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; }
-  .tier-name { font-weight: 600; font-size: 0.88rem; }
-  .tier-price { font-weight: 700; color: var(--sage); font-size: 0.95rem; }
-  .tier-desc { font-size: 0.78rem; color: #666; line-height: 1.5; }
-  .tier-badge {
-    font-size: 0.6rem; background: var(--amber); color: white;
-    padding: 0.15rem 0.5rem; border-radius: 100px; font-weight: 600;
-    letter-spacing: 0.05em; text-transform: uppercase;
-  }
-
-  .perks-list { display: flex; flex-direction: column; gap: 1.5rem; }
-  .perk {
-    display: flex; gap: 1.2rem; align-items: flex-start;
-    padding-bottom: 1.5rem; border-bottom: 1px solid #ede8da;
-  }
-  .perk:last-child { border-bottom: none; }
-  .perk-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: rgba(74,124,89,0.1); display: flex; align-items: center;
-    justify-content: center; font-size: 1.2rem; flex-shrink: 0;
-  }
-  .perk h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .perk p { font-size: 0.83rem; color: #555; line-height: 1.6; }
-
-  /* ── NEWSLETTER ── */
-  .newsletter-section {
-    background: var(--sage); color: var(--white);
-    padding: 6rem 5rem; text-align: center;
-  }
-  .newsletter-section .section-label { color: rgba(255,255,255,0.6); }
-  .newsletter-section .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1rem; }
-  .newsletter-sub { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
-  .signup-form {
-    display: flex; gap: 0; max-width: 520px; margin: 0 auto;
-    background: rgba(255,255,255,0.12); border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.2); overflow: hidden;
-  }
-  .signup-form input {
-    flex: 1; background: transparent; border: none;
-    padding: 1rem 1.2rem; color: white; font-size: 0.95rem;
-    font-family: 'DM Sans', sans-serif; outline: none;
-  }
-  .signup-form input::placeholder { color: rgba(255,255,255,0.5); }
-  .signup-form button {
-    background: var(--ink); color: white; border: none;
-    padding: 1rem 1.6rem; font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem; font-weight: 600; cursor: pointer;
-    transition: background 0.2s; white-space: nowrap;
-  }
-  .signup-form button:hover { background: #1a2820; }
-  .signup-note { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
-
-  .update-types {
-    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
-    margin-top: 2.5rem;
-  }
-  .update-type {
-    display: flex; align-items: center; gap: 0.5rem;
-    font-size: 0.82rem; color: rgba(255,255,255,0.7);
-  }
-  .update-type::before { content: '→'; color: rgba(255,255,255,0.4); }
-
-  /* ── FOUNDER ── */
-  .founder-section { padding: 6rem 5rem; }
-  .founder-inner {
-    display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center;
-  }
-  blockquote {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-style: italic; line-height: 1.45;
-    letter-spacing: -0.01em; color: var(--ink);
-    margin-bottom: 2rem;
-  }
-  blockquote::before { content: '\201C'; color: var(--sage); font-size: 4rem; line-height: 0; vertical-align: -1rem; margin-right: 0.2rem; }
-  .founder-sig { display: flex; align-items: center; gap: 1rem; }
-  .founder-avatar {
-    width: 52px; height: 52px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--sage), var(--sage-light));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-size: 1.2rem;
-    font-weight: 700; color: white;
-  }
-  .founder-name { font-weight: 600; font-size: 0.92rem; }
-  .founder-role { font-size: 0.8rem; color: var(--muted); }
-
-  .founder-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .stat-box {
-    background: var(--cream); border-radius: 10px; padding: 1.5rem;
-    border: 1px solid rgba(15,22,18,0.06);
-  }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 900; color: var(--sage); margin-bottom: 0.3rem;
-  }
-  .stat-label { font-size: 0.78rem; color: #555; line-height: 1.45; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink); color: rgba(255,255,255,0.5);
-    padding: 2.5rem 5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.8rem;
-  }
-  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-  footer a:hover { color: var(--sage-light); }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem; font-weight: 900; color: var(--sage-light);
-  }
-
-  /* ── SUCCESS TOAST ── */
-  .toast {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-    background: var(--sage); color: white;
-    padding: 1rem 1.5rem; border-radius: 8px;
-    font-size: 0.88rem; font-weight: 500;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    transform: translateY(100px); opacity: 0;
-    transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
-  }
-  .toast.show { transform: translateY(0); opacity: 1; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding: 8rem 2rem 3rem; }
-    .hero-visual { display: none; }
-    .section { padding: 4rem 2rem; }
-    .problem-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .proto-inner { grid-template-columns: 1fr; }
-    .proto-screens { display: none; }
-    .funding-grid { grid-template-columns: 1fr; }
-    .founder-inner { grid-template-columns: 1fr; }
-    .solution-section { padding: 4rem 2rem; }
-    .newsletter-section { padding: 4rem 2rem; }
-    .funding-section { padding: 4rem 2rem; }
-    .founder-section { padding: 4rem 2rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-    nav { padding: 1rem; }
-    .nav-links { gap: 1rem; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -539,10 +38,10 @@
     </div>
     <div class="hero-trust">
       <div class="trust-avatars">
-        <span style="background:#4a7c59">A</span>
-        <span style="background:#7aab8a">M</span>
-        <span style="background:#d4813a">J</span>
-        <span style="background:#5a8c69">K</span>
+        <span style="background:#24273C">A</span>
+        <span style="background:#3a3f5c">M</span>
+        <span style="background:#1D1A24">J</span>
+        <span style="background:#262533">K</span>
       </div>
       <span>Join 40+ NGO leaders already on the waitlist</span>
     </div>
@@ -581,31 +80,31 @@
               </div>
               <div class="table-row">
                 <div><div class="org-name">Gates Foundation</div><div class="org-type">Foundation</div></div>
-                <div style="font-size:0.68rem;color:#666">2 days ago</div>
+                <div style="font-size:0.68rem;color:#7a7a8a">2 days ago</div>
                 <div><span class="status-pill status-active">Active</span></div>
                 <div class="donation-amt">$42,000</div>
               </div>
               <div class="table-row">
                 <div><div class="org-name">UNICEF Partner</div><div class="org-type">Int'l NGO</div></div>
-                <div style="font-size:0.68rem;color:#666">1 week ago</div>
+                <div style="font-size:0.68rem;color:#7a7a8a">1 week ago</div>
                 <div><span class="status-pill status-warm">Warm</span></div>
                 <div class="donation-amt">$8,500</div>
               </div>
               <div class="table-row">
                 <div><div class="org-name">Schmidt Futures</div><div class="org-type">Foundation</div></div>
-                <div style="font-size:0.68rem;color:#666">Today</div>
+                <div style="font-size:0.68rem;color:#7a7a8a">Today</div>
                 <div><span class="status-pill status-new">New</span></div>
                 <div class="donation-amt">—</div>
               </div>
               <div class="table-row">
                 <div><div class="org-name">Open Society</div><div class="org-type">Foundation</div></div>
-                <div style="font-size:0.68rem;color:#666">3 days ago</div>
+                <div style="font-size:0.68rem;color:#7a7a8a">3 days ago</div>
                 <div><span class="status-pill status-active">Active</span></div>
                 <div class="donation-amt">$15,200</div>
               </div>
               <div class="table-row">
                 <div><div class="org-name">Local Church Fund</div><div class="org-type">Community</div></div>
-                <div style="font-size:0.68rem;color:#666">2 weeks ago</div>
+                <div style="font-size:0.68rem;color:#7a7a8a">2 weeks ago</div>
                 <div><span class="status-pill status-warm">Warm</span></div>
                 <div class="donation-amt">$1,800</div>
               </div>
@@ -621,7 +120,7 @@
 <section class="section" id="problem">
   <div class="section-label">The Problem</div>
   <h2 class="section-title">Nonprofits are running<br/>on duct tape and spreadsheets.</h2>
-  <p style="font-size:1rem;color:#555;max-width:580px;line-height:1.75">The CRMs that exist are either built for sales teams or cost $500/month. Neither option works for organizations operating on tight budgets to do meaningful work.</p>
+  <p style="font-size:1rem;color:#7a7a8a;max-width:580px;line-height:1.75">The CRMs that exist are either built for sales teams or cost $500/month. Neither option works for organizations operating on tight budgets to do meaningful work.</p>
   <div class="problem-grid">
     <div class="problem-card" data-num="01">
       <div class="problem-icon">💸</div>
@@ -636,7 +135,7 @@
     <div class="problem-card" data-num="03">
       <div class="problem-icon">🔌</div>
       <h3>Tools don't talk to each other</h3>
-      <p>Grant management is one app. Donor outreach is another. Impact reporting is a Word doc. Nothing is connected, so hours are lost to copying data between systems.</p>
+      <p>Grant management is one app. Donor outreach is another. Impact reporting is a Word doc. Nothing is connected, so hours are lost copying data between systems.</p>
     </div>
   </div>
 </section>
@@ -645,7 +144,7 @@
 <section class="solution-section" id="solution">
   <div class="section-label">The Solution</div>
   <h2 class="section-title" style="max-width:700px">One tool. Built for the mission,<br/>not the margin.</h2>
-  <p style="font-size:1rem;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.75;margin-top:1rem">CommonGood CRM connects your donors, grants, volunteers, and impact data in one place — at a price nonprofits can actually afford.</p>
+  <p style="font-size:1rem;max-width:560px;line-height:1.75;margin-top:1rem">CommonGood CRM connects your donors, grants, volunteers, and impact data in one place — at a price nonprofits can actually afford.</p>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">👥</div>
@@ -698,9 +197,9 @@
           <div class="screen-row"></div>
           <div class="screen-row medium"></div>
           <div class="screen-row short"></div>
-          <div style="height:12px;background:rgba(74,124,89,0.2);border-radius:3px;margin:0.5rem 0;width:70%"></div>
-          <div style="height:12px;background:rgba(212,129,58,0.2);border-radius:3px;margin:0.5rem 0;width:45%"></div>
-          <div style="height:12px;background:rgba(74,124,89,0.15);border-radius:3px;margin:0.5rem 0;width:85%"></div>
+          <div style="height:12px;background:rgba(36,39,60,0.15);border-radius:3px;margin:0.5rem 0;width:70%"></div>
+          <div style="height:12px;background:rgba(38,37,51,0.12);border-radius:3px;margin:0.5rem 0;width:45%"></div>
+          <div style="height:12px;background:rgba(36,39,60,0.1);border-radius:3px;margin:0.5rem 0;width:85%"></div>
         </div>
       </div>
       <div class="proto-screen proto-screen-3">
@@ -725,7 +224,7 @@
       <a href="#" class="btn-primary" onclick="showToast('🎨 Adobe prototype coming soon — join the waitlist to get early access!'); return false;">
         🎨 View Interactive Prototype
       </a>
-      <p style="font-size:0.75rem;color:#999;margin-top:0.8rem">Clickable Adobe XD prototype — no download needed</p>
+      <p style="font-size:0.75rem;color:#7a7a8a;margin-top:0.8rem">Clickable Adobe XD prototype — no download needed</p>
     </div>
   </div>
 </section>
@@ -809,13 +308,11 @@
   <div class="section-label">Stay in the Loop</div>
   <h2 class="section-title">Founder updates, direct<br/>to your inbox.</h2>
   <p class="newsletter-sub">Monthly updates on what we're building, what we're learning, and how your support is moving the needle. No fluff. Honest progress.</p>
-
   <form class="signup-form" onsubmit="handleSignup(event)">
     <input type="email" id="email-input" placeholder="your@ngo.org" required />
     <button type="submit">Join Waitlist →</button>
   </form>
   <p class="signup-note">No spam. Unsubscribe anytime. ~1 email/month.</p>
-
   <div class="update-types">
     <div class="update-type">Build updates</div>
     <div class="update-type">Funding milestones</div>
@@ -885,9 +382,6 @@
     if (email) {
       document.getElementById('email-input').value = '';
       showToast('🎉 You\'re on the list! Founder updates coming soon.');
-      // Update count
-      const trust = document.querySelector('.hero-trust span');
-      if (trust) trust.textContent = 'Join 41+ NGO leaders already on the waitlist';
     }
   }
 
@@ -907,7 +401,6 @@
       }
     });
   }, { threshold: 0.3 });
-
   const pcard = document.querySelector('.progress-card');
   if (pcard) observer.observe(pcard);
 
