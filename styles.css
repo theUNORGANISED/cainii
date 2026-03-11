@@ -25,7 +25,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   background: var(--bg);
   color: var(--ink);
   overflow-x: hidden;
@@ -41,7 +41,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 1.3rem; font-weight: 900; color: var(--space-indigo);
   letter-spacing: -0.02em;
 }
@@ -90,7 +90,7 @@ nav {
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
 
 .hero-title {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: clamp(2.8rem, 4.5vw, 4.2rem);
   font-weight: 900; line-height: 1.08;
   letter-spacing: -0.03em; margin-bottom: 1.5rem;
@@ -110,7 +110,7 @@ nav {
   font-size: 0.95rem; font-weight: 500;
   text-decoration: none; border: none; cursor: pointer;
   transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-  letter-spacing: 0.01em; font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.01em; font-family: 'Instrument Sans', sans-serif;
 }
 .btn-primary:hover {
   background: var(--accent-light);
@@ -123,7 +123,7 @@ nav {
   font-size: 0.95rem; font-weight: 500;
   text-decoration: none; border: 1.5px solid var(--border-dark); cursor: pointer;
   transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 .btn-secondary:hover { border-color: var(--space-indigo); color: var(--space-indigo); }
 
@@ -174,7 +174,7 @@ nav {
 }
 .sidebar-brand {
   padding: 0 1rem 1.2rem;
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 0.9rem; font-weight: 700; color: #a0a8c8;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 0.8rem;
@@ -236,7 +236,7 @@ nav {
   text-transform: uppercase; color: var(--space-indigo); margin-bottom: 1rem;
 }
 .section-title {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
   margin-bottom: 1.5rem; color: var(--shadow-grey-1);
@@ -258,7 +258,7 @@ nav {
 .problem-card::after {
   content: attr(data-num);
   position: absolute; bottom: -0.5rem; right: 1rem;
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 5rem; font-weight: 900; color: rgba(36,39,60,0.04);
   line-height: 1; pointer-events: none;
 }
@@ -334,7 +334,7 @@ nav {
   box-shadow: 0 4px 20px rgba(29,26,36,0.06);
 }
 .proto-cta-box h3 {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--ink);
 }
 .proto-cta-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.5rem; }
@@ -357,7 +357,7 @@ nav {
 }
 .progress-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; }
 .progress-amount {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 2.5rem; font-weight: 900; color: var(--space-indigo);
 }
 .progress-goal { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
@@ -415,12 +415,12 @@ nav {
 .signup-form input {
   flex: 1; background: transparent; border: none;
   padding: 1rem 1.2rem; color: white; font-size: 0.95rem;
-  font-family: 'DM Sans', sans-serif; outline: none;
+  font-family: 'Instrument Sans', sans-serif; outline: none;
 }
 .signup-form input::placeholder { color: rgba(255,255,255,0.4); }
 .signup-form button {
   background: var(--shadow-grey-1); color: white; border: none;
-  padding: 1rem 1.6rem; font-family: 'DM Sans', sans-serif;
+  padding: 1rem 1.6rem; font-family: 'Instrument Sans', sans-serif;
   font-size: 0.88rem; font-weight: 600; cursor: pointer;
   transition: background 0.2s; white-space: nowrap;
 }
@@ -437,7 +437,7 @@ nav {
 .founder-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
 
 blockquote {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-style: italic; line-height: 1.45;
   letter-spacing: -0.01em; color: var(--ink); margin-bottom: 2rem;
@@ -451,7 +451,7 @@ blockquote::before {
   width: 52px; height: 52px; border-radius: 50%;
   background: linear-gradient(135deg, var(--space-indigo), var(--shadow-grey-2));
   display: flex; align-items: center; justify-content: center;
-  font-family: 'DM Sans', serif; font-size: 1.2rem;
+  font-family: 'Instrument Sans', serif; font-size: 1.2rem;
   font-weight: 700; color: white;
 }
 .founder-name { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
@@ -463,7 +463,7 @@ blockquote::before {
   border: 1px solid var(--border);
 }
 .stat-num {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 2rem; font-weight: 900; color: var(--space-indigo); margin-bottom: 0.3rem;
 }
 .stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
@@ -503,7 +503,7 @@ footer {
 footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
 footer a:hover { color: #a0a8c8; }
 .footer-logo {
-  font-family: 'DM Sans', serif;
+  font-family: 'Instrument Sans', serif;
   font-size: 1.1rem; font-weight: 900; color: #a0a8c8;
 }
 
