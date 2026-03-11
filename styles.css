@@ -1,8 +1,8 @@
 /* ── VARIABLES ── */
 :root {
   /* ── FONTS ── */
-  --font-heading: 'Antique Olive', serif;      /* Display / headings — change here */
-  --font-body:    'Proxima Soft', sans-serif; /* Body / UI text — change here */
+  --font-heading: 'Instrument', serif;      /* Display / headings — change here */
+  --font-body:    'Public Sans', sans-serif; /* Body / UI text — change here */
 
   --white:        #FFFDFC;
   --platinum-1:   #F2F2F4;
