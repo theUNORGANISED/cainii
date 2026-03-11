@@ -1,8 +1,8 @@
 /* ── VARIABLES ── */
 :root {
   /* ── FONTS ── */
-  --font-heading: 'Instrument', serif;      /* Display / headings — change here */
-  --font-body:    'Public Sans', sans-serif; /* Body / UI text — change here */
+  --font-heading: 'DM Sans', sans-serif;      /* Display / headings — change here */
+  --font-body:    'Syne', sans-serif; /* Body / UI text — change here */
 
   --white:        #FFFDFC;
   --platinum-1:   #F2F2F4;
