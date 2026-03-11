@@ -2,7 +2,7 @@
 :root {
   /* ── FONTS ── */
   --font-heading: 'Syne', serif;      /* Display / headings — change here */
-  --font-body:    'DM Sans', sans-serif; /* Body / UI text — change here */
+  --font-body:    'Urbanist', sans-serif; /* Body / UI text — change here */
 
   --white:        #FFFDFC;
   --platinum-1:   #F2F2F4;
