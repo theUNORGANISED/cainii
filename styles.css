@@ -1,6 +1,6 @@
 /* ── VARIABLES ── */
 :root {
-  --font-heading: 'Inter', sans-serif;
+  --font-heading: 'DM Sans', sans-serif;
   --font-body:    'Syne', sans-serif;
 
   --white:         #FFFDFC;
@@ -955,7 +955,8 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   gap: 1.5rem;
   font-size: 0.72rem;
   color: rgba(255,255,255,0.25);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.8rem;
+  flex-shrink: 0;
 }
 .wl-footer-legal a {
   color: rgba(255,255,255,0.25);
@@ -965,13 +966,16 @@ footer a:hover { color: rgba(255,255,255,0.7); }
 .wl-footer-legal a:hover { color: rgba(255,255,255,0.6); }
 .wl-footer-bigname {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 12vw, 11rem);
+  font-size: clamp(5rem, 10vw, 10rem);
   font-weight: 700;
   color: rgba(255,255,255,0.06);
   letter-spacing: -0.03em;
   line-height: 0.85;
   user-select: none;
   display: block;
+  white-space: nowrap;
+  padding-bottom: 0;
+  margin-bottom: -0.1em;
 }
 
 /* ── Responsive ── */
