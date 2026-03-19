@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cainii — CRM Built for Nonprofits</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero hero--centered">
+  <div class="eyebrow"><span></span> Launching on Kickstarter</div>
+  <h1 class="hero-title">
+    The CRM built<br/>
+    for <em>nonprofits</em>,<br/>
+    not sales teams.
+  </h1>
+  <p class="hero-sub">
+    Donor management, grant tracking, and impact reporting — in one tool designed from the ground up for mission-driven organizations.
+  </p>
+
+  <div class="form-wrap">
+    <form class="signup-form signup-form--light" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
+      <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
+      </div>
+      <button type="submit">Join Waitlist →</button>
+    </form>
+    <div class="gdpr-check">
+      <label>
+        <input type="checkbox" required />
+        <span>I agree to receive founder updates and accept the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
+      </label>
+    </div>
+    <p class="signup-note">No spam. ~1 email/month.</p>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="founder-inner">
+    <div class="founder-photo-col">
+      <div class="founder-photo-placeholder">
+        <div class="founder-photo-label">Add your photo here</div>
+      </div>
+    </div>
+    <div class="founder-content-col">
+      <div class="section-label">The Founder</div>
+      <blockquote>
+        The organizations doing the most important work in the world shouldn't have the worst software.
+      </blockquote>
+      <div class="founder-story">
+        <p>Every morning at the charity I worked at started the same way — manually pulling donation data from PayPal and the bank into a spreadsheet before I could do anything useful.</p>
+        <p>Thank-you emails went out by hand. We had no idea which campaigns were working, who had donated before, or where new donors were finding us. Hours vanished into admin that should have taken minutes.</p>
+        <p><strong>Cainii is the tool I needed then.</strong> Built from that experience, shaped by conversations with NGOs who are living the same problem right now.</p>
+      </div>
+      <div class="founder-sig">
+        <div class="founder-avatar">S</div>
+        <div>
+          <div class="founder-name">Sunny · Founder, Cainii</div>
+          <div class="founder-role">Building in public · Documenting on LinkedIn</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="section-label">Join the waitlist</div>
+  <h2 class="section-title">Be first to know<br/><em>when we launch.</em></h2>
+  <p class="section-sub">Get notified on launch day and lock in founding member pricing before it goes public.</p>
+
+  <div class="form-wrap form-wrap--static">
+    <form class="signup-form signup-form--light" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
+      <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
+      </div>
+      <button type="submit">Join Waitlist →</button>
+    </form>
+    <div class="gdpr-check">
+      <label>
+        <input type="checkbox" required />
+        <span>I agree to receive founder updates and accept the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
+      </label>
+    </div>
+    <p class="signup-note">No spam. ~1 email/month.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Cainii</span>
+  <div>Built in public · <a href="/">cainii.de</a></div>
+  <div>© 2026 Cainii</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  }
+</script>
+</body>
+</html>
