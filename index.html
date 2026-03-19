@@ -10,7 +10,7 @@
 </head>
 <body class="wl-body">
 
-<!-- HEADER -->
+<!-- NAV -->
 <header class="wl-header">
   <span class="wl-logo">Cainii</span>
   <nav class="wl-nav">
@@ -18,44 +18,80 @@
   </nav>
 </header>
 
-<!-- HERO: editorial centered -->
+<!-- HERO -->
 <section class="wl-hero">
-  <p class="wl-eyebrow">Launching on Kickstarter</p>
-  <h1 class="wl-title">The CRM built for<br/><em>people who change</em><br/>the world.</h1>
-  <p class="wl-sub">Donor management, grant tracking, and impact reporting — one tool designed for mission-driven organizations, not sales teams.</p>
 
-  <!-- FORM -->
-  <div class="wl-form-wrap">
-    <form class="wl-form" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
-      <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
-      <div style="position:absolute;left:-5000px" aria-hidden="true">
-        <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
-      </div>
-      <button type="submit">Join Waitlist</button>
-    </form>
-    <label class="wl-gdpr">
-      <input type="checkbox" required />
-      <span>I agree to receive founder updates and the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
-    </label>
-    <p class="wl-note">No spam. ~1 email/month.</p>
+  <!-- Top: headline + sub + form -->
+  <div class="wl-hero-top">
+    <h1 class="wl-title">The CRM built for<br/><em>people who change</em><br/>the world.</h1>
+    <p class="wl-sub">Donor management and grant tracking — one affordable tool built for nonprofits, not sales teams.</p>
+
+    <div class="wl-form-wrap">
+      <form class="wl-form" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
+        <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
+        </div>
+        <button type="submit">Join Waitlist</button>
+      </form>
+      <label class="wl-gdpr">
+        <input type="checkbox" required />
+        <span>I agree to receive founder updates and the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
+      </label>
+    </div>
   </div>
+
+  <!-- Three portrait photos side by side -->
+  <div class="wl-portraits">
+    <div class="wl-portrait wl-portrait--1">
+      <span class="wl-portrait-hint">Photo</span>
+    </div>
+    <div class="wl-portrait wl-portrait--2">
+      <span class="wl-portrait-hint">Photo</span>
+    </div>
+    <div class="wl-portrait wl-portrait--3">
+      <span class="wl-portrait-hint">Photo</span>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div class="wl-stats">
+    <div class="wl-stat">
+      <span class="wl-stat-num">30+</span>
+      <span class="wl-stat-label">NGOs interviewed before writing a line of code</span>
+    </div>
+    <div class="wl-stat-divider"></div>
+    <div class="wl-stat">
+      <span class="wl-stat-num">€0</span>
+      <span class="wl-stat-label">Outside funding — 100% community-backed</span>
+    </div>
+    <div class="wl-stat-divider"></div>
+    <div class="wl-stat">
+      <span class="wl-stat-num">1</span>
+      <span class="wl-stat-label">Founder building in public, documenting everything</span>
+    </div>
+  </div>
+
 </section>
 
-<!-- PHOTO BAND -->
-<div class="wl-photo-band">
-  <div class="wl-photo-placeholder">
-    <span class="wl-photo-hint">Add a photo here — you at work, your team, or something that represents the mission</span>
+<!-- FULL-BLEED PHOTO -->
+<div class="wl-fullbleed">
+  <div class="wl-fullbleed-inner">
+    <span class="wl-fullbleed-hint">Add a wide photo here — you at work, your team, or something that represents the mission</span>
   </div>
 </div>
 
 <!-- FOUNDER -->
 <section class="wl-founder">
-  <div class="wl-founder-inner">
+  <p class="wl-label">The Founder</p>
+  <div class="wl-founder-grid">
     <div class="wl-founder-left">
-      <p class="wl-label">The Founder</p>
-      <blockquote class="wl-quote">
-        "The organizations doing the most important work in the world shouldn't have the worst software."
-      </blockquote>
+      <h2 class="wl-founder-heading">We are passionate about giving nonprofits the tools they actually deserve.</h2>
+    </div>
+    <div class="wl-founder-right">
+      <p>Every morning at the charity I worked at started the same way — manually pulling donation data from PayPal and the bank into a spreadsheet before I could do anything useful.</p>
+      <p>Thank-you emails went out by hand. We had no idea which campaigns were working, who had donated before, or where new donors were finding us. Hours vanished into admin that should have taken minutes.</p>
+      <p><strong>Cainii is the tool I needed then.</strong> Built from that experience, shaped by conversations with NGOs who are living the same problem right now.</p>
       <div class="wl-sig">
         <div class="wl-avatar">S</div>
         <div>
@@ -64,20 +100,15 @@
         </div>
       </div>
     </div>
-    <div class="wl-founder-right">
-      <p>Every morning at the charity I worked at started the same way — manually pulling donation data from PayPal and the bank into a spreadsheet before I could do anything useful.</p>
-      <p>Thank-you emails went out by hand. We had no idea which campaigns were working, who had donated before, or where new donors were finding us. Hours vanished into admin that should have taken minutes.</p>
-      <p><strong>Cainii is the tool I needed then.</strong> Built from that experience, shaped by conversations with NGOs who are living the same problem right now.</p>
-    </div>
   </div>
 </section>
 
 <!-- BOTTOM CTA -->
 <section class="wl-cta">
   <p class="wl-label">Stay in the loop</p>
-  <h2 class="wl-cta-title">Be first to know<br/><em>when we launch.</em></h2>
+  <h2 class="wl-cta-title">Be first to know when we launch.</h2>
   <p class="wl-cta-sub">Get notified on launch day and lock in founding member pricing before it goes public.</p>
-  <div class="wl-form-wrap wl-form-wrap--static">
+  <div class="wl-form-wrap wl-form-wrap--center">
     <form class="wl-form" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
       <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
       <div style="position:absolute;left:-5000px" aria-hidden="true">
