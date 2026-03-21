@@ -1096,7 +1096,7 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 2rem 5rem 0;
+  padding: 2rem 0 0;
   overflow: hidden;
 }
 .site-footer__terms {
