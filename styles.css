@@ -76,6 +76,10 @@ nav {
   letter-spacing: 0.04em;
 }
 .nav-cta:hover { background: var(--accent-light) !important; }
+.wl-logo-img {
+  height: 32px;
+  display: block;
+}
 
 /* ── HERO (main site — two-column) ── */
 .hero {
