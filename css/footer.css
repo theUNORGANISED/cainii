@@ -1,0 +1,127 @@
+/* ─────────────────────────────────────────
+   Footer
+   ───────────────────────────────────────── */
+
+.footer {
+  background: #0e0d11;
+  color: var(--white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top: tagline + social ── */
+.footer__top {
+  padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 64px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__tagline {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 300;
+  color: rgba(255, 253, 252, 0.35);
+  line-height: 1.65;
+  max-width: 400px;
+}
+
+/* Social icon buttons — dark circle bg matching screenshot */
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 253, 252, 0.1);
+  color: rgba(255, 253, 252, 0.7);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.footer__social-btn:hover {
+  background: rgba(255, 253, 252, 0.2);
+  color: var(--white);
+}
+
+/* ── Oversized wordmark logo ── */
+.footer__wordmark {
+  padding-inline: clamp(24px, 5vw, 64px);
+  /* Push logo to right half — matches screenshot positioning */
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(32px, 6vw, 64px);
+  overflow: hidden;
+}
+
+.footer__logo-img {
+  /* Fill the full width of the footer visually — bleed to right edge */
+  width: clamp(480px, 75vw, 1100px);
+  height: auto;
+  /* Invert to white on dark background */
+  filter: invert(1) brightness(10);
+  display: block;
+  /* Slight overflow to right, cropped by footer overflow:hidden */
+  margin-right: -2vw;
+}
+
+/* ── Bottom bar ── */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 253, 252, 0.08);
+  padding: 20px clamp(24px, 5vw, 64px);
+  margin-top: clamp(24px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer__legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__legal a {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255, 253, 252, 0.4);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.footer__legal a:hover {
+  color: var(--white);
+}
+
+.footer__copy {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255, 253, 252, 0.3);
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .footer__logo-img {
+    width: 100vw;
+    margin-right: 0;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
