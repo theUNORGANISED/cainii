@@ -5,6 +5,31 @@
 (function () {
   'use strict';
 
+   // Nav border opacity on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 4) {
+        nav.style.borderBottomColor = '#E4E6EB';
+      } else {
+        nav.style.borderBottomColor = '#E4E6EB';
+      }
+    }, { passive: true });
+  }
+
+  // Prevent double-submit
+  const form = document.querySelector('.signup-form-wrap');
+  if (form) {
+    form.addEventListener('submit', function () {
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.style.opacity = '0.4';
+      }
+    });
+  }
+
+
   // Staggered reveal on scroll
   const steps = document.querySelectorAll('.hiw__step');
 
@@ -36,5 +61,41 @@
       el.style.transform = 'none';
     });
   }
+
+
+  const els = [
+    document.querySelector('.about__heading'),
+    document.querySelector('.about__photos'),
+    document.querySelector('.about__right'),
+  ].filter(Boolean);
+
+  els.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const idx = els.indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'none';
+          }, idx * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    els.forEach(function (el) { observer.observe(el); });
+  } else {
+    els.forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
 
 })();
