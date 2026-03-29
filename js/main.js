@@ -148,5 +148,40 @@
 
 
 
-   
+  // Fade in tagline + social on scroll into view
+  const els = [
+    document.querySelector('.footer__tagline'),
+    document.querySelector('.footer__social'),
+    document.querySelector('.footer__wordmark'),
+  ].filter(Boolean);
+
+  els.forEach(function (el, i) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.7s ease ' + (i * 0.12) + 's, transform 0.7s ease ' + (i * 0.12) + 's';
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          els.forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.05 });
+
+    const footer = document.querySelector('.footer');
+    if (footer) observer.observe(footer);
+  } else {
+    els.forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+
 })();
