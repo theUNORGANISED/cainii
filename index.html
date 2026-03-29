@@ -1,100 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cainii — CRM Built for Nonprofits</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cainii — the CRM built for NGOs. Join the waitlist and be first to know when we launch." />
+  <title>Cainii — Newsletter</title>
+
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
 </head>
-<body class="wl-body">
+<body>
 
-<!-- NAV -->
-<header class="wl-header">
-  <a href="/"><img src="logo.svg" alt="Cainii" class="wl-logo-img" /></a>
-</header>
+  <!-- ── Navigation ── -->
+  <header class="nav">
+    <a href="/" class="nav__logo" aria-label="Cainii home">
+      <!--
+        Replace the span below with:
+        <img src="assets/logo.svg" alt="cainii" />
+        once you have the SVG logo file.
+      -->
+      <span class="nav__logo-text">cainii</span>
+    </a>
+  </header>
 
-<!-- HERO -->
-<section class="wl-hero">
+  <!-- ── Hero ── -->
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
 
-  <!-- Top: headline + sub + form -->
-  <div class="wl-hero-top">
-    <h1 class="wl-title">The CRM built for<br/><em>people who change</em><br/>the world.</h1>
-    <p class="wl-sub">Donor management and grant tracking — one affordable tool built for nonprofits, not sales teams.</p>
+        <h1 class="hero__title">NEWSLETTER</h1>
 
-    <div class="wl-form-wrap">
-      <form class="wl-form" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
-        <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
-        <div style="position:absolute;left:-5000px" aria-hidden="true">
-          <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
-        </div>
-        <button type="submit">Join Waitlist</button>
-      </form>
-      <label class="wl-gdpr">
-        <input type="checkbox" required />
-        <span>I agree to receive founder updates and the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
-      </label>
-    </div>
-  </div>
+        <p class="hero__sub">
+          We surface the right donor data at the right moment,
+          so you can focus on what actually matters.
+          Sign up to follow the build.
+        </p>
 
-</section>
+        <!-- Mailchimp form -->
+        <form
+          class="signup-form-wrap"
+          action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&amp;id=4baed7a808&amp;v_id=1&amp;f_id=00232be1f0"
+          method="POST"
+          target="_blank"
+        >
+          <div class="signup-form">
+            <input
+              type="email"
+              name="EMAIL"
+              placeholder="Your email address"
+              required
+            />
+            <!-- Mailchimp honeypot -->
+            <div style="position:absolute;left:-5000px" aria-hidden="true">
+              <input
+                type="text"
+                name="b_12050a1c43444a8fcd8c79bce_4baed7a808"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+            <button type="submit"><span>→</span></button>
+          </div>
 
+          <div class="gdpr-check">
+            <label>
+              <input type="checkbox" name="gdpr[83011]" value="Y" required />
+              <span>
+                I agree to receive founder updates and accept the
+                <a href="/privacy" target="_blank">Privacy Policy</a>.
+                Unsubscribe anytime.
+              </span>
+            </label>
+          </div>
+        </form>
 
-<!-- FOUNDER -->
-<section class="wl-founder">
-  <p class="wl-label">The Founder</p>
-  <div class="wl-founder-grid">
-    <div class="wl-founder-left">
-      <h2 class="wl-founder-heading">We are passionate about giving nonprofits the tools they actually deserve.</h2>
-    </div>
-    <div class="wl-founder-right">
-      <p>Every morning at the charity I worked at started the same way — manually pulling donation data from PayPal and the bank into a spreadsheet before I could do anything useful.</p>
-      <p>Thank-you emails went out by hand. We had no idea which campaigns were working, who had donated before, or where new donors were finding us. Hours vanished into admin that should have taken minutes.</p>
-      <p><strong>Cainii is the tool I needed then.</strong> Built from that experience, shaped by conversations with NGOs who are living the same problem right now.</p>
-      <div class="wl-sig">
-        <div class="wl-avatar">S</div>
-        <div>
-          <p class="wl-sig-name">Sunny · Founder, Cainii</p>
-          <p class="wl-sig-role">Building in public · Documenting on LinkedIn</p>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<!-- BOTTOM CTA -->
-<section class="wl-cta">
-  <p class="wl-label">Stay in the loop</p>
-  <h2 class="wl-cta-title">Be first to know when we launch.</h2>
-  <p class="wl-cta-sub">Get notified on launch day and lock in founding member pricing before it goes public.</p>
-  <div class="wl-form-wrap wl-form-wrap--center">
-    <form class="wl-form" action="https://gmail.us17.list-manage.com/subscribe/post?u=12050a1c43444a8fcd8c79bce&id=4baed7a808&v_id=1&f_id=00232be1f0" method="POST" target="_blank" onsubmit="showToast('You\'re on the list — we\'ll be in touch.')">
-      <input type="email" name="EMAIL" placeholder="your@ngo.org" required />
-      <div style="position:absolute;left:-5000px" aria-hidden="true">
-        <input type="text" name="b_12050a1c43444a8fcd8c79bce_4baed7a808" tabindex="-1" value="">
-      </div>
-      <button type="submit">Join Waitlist</button>
-    </form>
-    <label class="wl-gdpr">
-      <input type="checkbox" required />
-      <span>I agree to receive founder updates and the <a href="/privacy" target="_blank">Privacy Policy</a>. Unsubscribe anytime.</span>
-    </label>
-    <p class="wl-note">No spam. ~1 email/month.</p>
-  </div>
-</section>
+  <script src="js/main.js" defer></script>
 
-<!-- FOOTER -->
-<div id="site-footer"></div>
-
-<script>
-  fetch('/footer.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('site-footer').innerHTML = html;
-    });
-</script>
-
-<div class="toast" id="toast"></div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cg
+</body>
+</html>
