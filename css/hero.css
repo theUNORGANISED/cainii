@@ -93,8 +93,6 @@
   font-weight: 300;
   color: var(--shadow-dark);
   letter-spacing: 0.01em;
-  border-right: 1px solid #ccc;
-  padding-right: 12px;
 }
 
 .signup-form input[type="email"] {
