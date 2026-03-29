@@ -98,4 +98,55 @@
   }
 
 
+
+  // Scroll reveal
+  const els = [
+    document.querySelector('.contact__left'),
+    document.querySelector('.contact__form'),
+  ].filter(Boolean);
+
+  els.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const idx = els.indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'none';
+          }, idx * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    els.forEach(function (el) { observer.observe(el); });
+  } else {
+    els.forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  // Prevent double-submit
+  const form = document.querySelector('.contact__form');
+  if (form) {
+    form.addEventListener('submit', function () {
+      const btn = form.querySelector('.contact__submit');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        btn.style.opacity = '0.5';
+      }
+    });
+  }
+
+
+
+   
 })();
