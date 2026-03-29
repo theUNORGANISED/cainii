@@ -1,0 +1,155 @@
+/* ─────────────────────────────────────────
+   Hero — Newsletter
+   ───────────────────────────────────────── */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px; /* nav height */
+  padding-inline: clamp(24px, 5vw, 60px);
+  text-align: center;
+  background: var(--white);
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* "NEWSLETTER" */
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--shadow-dark);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+/* Subtitle */
+.hero__sub {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 300;
+  color: #999;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+/* ── Mailchimp Form ── */
+.signup-form-wrap {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.signup-form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  gap: 12px;
+}
+
+.signup-form input[type="email"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--shadow-dark);
+  letter-spacing: 0.01em;
+}
+
+.signup-form input[type="email"]::placeholder {
+  color: #bbb;
+  font-weight: 300;
+}
+
+.signup-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: var(--shadow-dark);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.signup-form button:hover {
+  transform: translateX(4px);
+}
+
+/* Arrow — match screenshot exactly */
+.signup-form button::after {
+  content: '→';
+  font-size: 18px;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Hide any text inside button (arrow is CSS) */
+.signup-form button span {
+  display: none;
+}
+
+/* GDPR */
+.gdpr-check {
+  width: 100%;
+}
+
+.gdpr-check label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.gdpr-check input[type="checkbox"] {
+  margin-top: 3px;
+  width: 13px;
+  height: 13px;
+  accent-color: var(--shadow-dark);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.gdpr-check span {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.gdpr-check a {
+  color: var(--shadow-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: clamp(36px, 14vw, 60px);
+  }
+}
