@@ -31,6 +31,7 @@
   line-height: 1;
   color: var(--shadow-dark);
   margin-bottom: clamp(32px, 5vw, 56px);
+   text-transform: uppercase;
 }
 
 /* Subtitle */
