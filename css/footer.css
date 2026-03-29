@@ -3,7 +3,7 @@
    ───────────────────────────────────────── */
 
 .footer {
-  background: #0e0d11;
+  background: var(--shadow-dark);
   color: var(--white);
   overflow: hidden;
   display: flex;
