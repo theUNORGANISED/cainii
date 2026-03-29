@@ -65,22 +65,7 @@
   gap: 12px;
 }
 
-.signup-form input[type="email"] {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--shadow-dark);
-  letter-spacing: 0.01em;
-}
 
-.signup-form input[type="email"]::placeholder {
-  color: #bbb;
-  font-weight: 300;
-}
 
 .signup-form button {
   background: none;
