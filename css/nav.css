@@ -1,0 +1,38 @@
+/* ─────────────────────────────────────────
+   Navigation
+   ───────────────────────────────────────── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--platinum-2);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-inline: clamp(24px, 5vw, 60px);
+}
+
+.nav__logo {
+  display: block;
+  line-height: 1;
+}
+
+.nav__logo img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+/* Fallback text logo if no SVG */
+.nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--shadow-dark);
+  font-style: italic;
+}
