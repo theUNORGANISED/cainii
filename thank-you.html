@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cainii — Thanks for joining." />
+  <title>Cainii — You're in.</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <style>
+    .thankyou {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 64px;
+      padding-inline: clamp(24px, 5vw, 60px);
+      text-align: center;
+      background: var(--white);
+    }
+
+    .thankyou__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .thankyou__title {
+      font-family: var(--font-heading);
+      font-size: clamp(43px, 6vw, 75px);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--shadow-dark);
+      text-transform: uppercase;
+      margin-bottom: clamp(20px, 3vw, 32px);
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .thankyou__sub {
+      font-family: var(--font-body);
+      font-size: clamp(13px, 1.4vw, 15px);
+      font-weight: 300;
+      color: #999;
+      line-height: 1.7;
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s ease forwards 0.25s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <a href="/" class="nav__logo" aria-label="Cainii home">
+      <img src="logo.svg" alt="cainii" />
+    </a>
+  </header>
+
+  <main>
+    <section class="thankyou">
+      <div class="thankyou__inner">
+        <h1 class="thankyou__title">You're in.</h1>
+        <p class="thankyou__sub">Thanks for joining the Cainii waitlist. You'll hear from us when there's something worth sharing.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top"></div>
+      <div class="footer__wordmark">
+        <img src="logo.svg" alt="cainii" class="footer__logo-img" />
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Cainii. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
