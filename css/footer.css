@@ -64,7 +64,7 @@
 
 .footer__logo-img {
   /* Fill the full width of the footer visually — bleed to right edge */
-  width: clamp(480px, 75vw, 1100px);
+  width: clamp(480px, 75vw, 800px);
   height: auto;
   /* Invert to white on dark background */
   filter: invert(1) brightness(10);
