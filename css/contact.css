@@ -1,0 +1,141 @@
+/* ─────────────────────────────────────────
+   Contact
+   ───────────────────────────────────────── */
+
+.contact {
+  background: var(--white);
+  padding-block: clamp(64px, 10vw, 120px);
+  padding-inline: clamp(24px, 6vw, 80px);
+}
+
+.contact__container {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0 60px;
+  align-items: start;
+}
+
+/* ── Left ── */
+.contact__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 6.5vw, 88px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--shadow-dark);
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.contact__sub {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 300;
+  color: #555;
+  line-height: 1.65;
+  margin-bottom: 40px;
+}
+
+/* Horizontal rule below the sub text — visible in screenshot */
+.contact__rule {
+  width: 100%;
+  height: 1px;
+  background: var(--platinum-2);
+}
+
+/* ── Right — Form ── */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Name + Email side by side */
+.contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Field wrapper */
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact__field label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+
+/* Inputs & textarea — platinum fill, rounded, no border */
+.contact__field input,
+.contact__field textarea {
+  background: var(--platinum-1);
+  border: none;
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--shadow-dark);
+  outline: none;
+  transition: background 0.2s ease;
+  resize: none;
+  width: 100%;
+  appearance: none;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: #bbb;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  background: var(--platinum-2);
+}
+
+/* ── Submit button — full-width dark rounded pill ── */
+.contact__submit {
+  width: 100%;
+  background: var(--shadow-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 20px 28px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 4px;
+}
+
+.contact__submit:hover {
+  opacity: 0.82;
+}
+
+.contact__submit:active {
+  opacity: 0.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 48px 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .contact__row {
+    grid-template-columns: 1fr;
+  }
+}
