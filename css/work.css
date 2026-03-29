@@ -50,7 +50,7 @@
 }
 
 .hiw__accent {
-  color: #bbb;
+  color: var(--platinum-2);
   font-weight: 700;
 }
 
